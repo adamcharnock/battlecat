@@ -1,4 +1,7 @@
+include *.py
 include *.txt
-include *.rst
-recursive-include docs *
+include Procfile
 include VERSION
+recursive-include battlecat *.css
+recursive-include battlecat *.gitkeep
+recursive-include battlecat *.html
