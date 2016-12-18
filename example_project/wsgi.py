@@ -1,5 +1,5 @@
 """
-WSGI config for battlecat project.
+WSGI config for example_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -9,10 +9,8 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 
 import os
 
-from dj_static import Cling
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "battlecat.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "example_project.settings")
 
 application = get_wsgi_application()
-application = Cling(application)
