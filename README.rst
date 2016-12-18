@@ -1,6 +1,21 @@
 Battlecat
 =========
 
+.. image:: https://img.shields.io/pypi/v/battlecat.svg
+    :target: https://badge.fury.io/py/battlecat
+
+.. image:: https://img.shields.io/pypi/dm/battlecat.svg
+    :target: https://pypi.python.org/pypi/battlecat
+
+.. image:: https://img.shields.io/github/license/adamcharnock/battlecat.svg
+    :target: https://pypi.python.org/pypi/battlecat/
+
+.. image:: https://travis-ci.org/adamcharnock/battlecat.svg?branch=master
+    :target: https://travis-ci.org/adamcharnock/battlecat/
+
+.. image:: https://coveralls.io/repos/github/adamcharnock/battlecat/badge.svg?branch=master
+    :target: https://coveralls.io/github/adamcharnock/battlecat?branch=master
+
 Battlecat is a general purpose double entry accounting web application.
 Battlecat is based on `Hordak`_ and is currently a work in progress.
 
