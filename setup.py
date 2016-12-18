@@ -35,6 +35,7 @@ setup(
         'django-redis==4.6.0',
         'django-choices==1.4.4',
         'django-adminlte2',
+        'django-hordak>=1.2.0',
     ],
     # Ensure we include files from the manifest
     include_package_data=True,
