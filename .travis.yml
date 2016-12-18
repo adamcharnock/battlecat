@@ -1,0 +1,24 @@
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+services:
+- postgresql
+env:
+- DJANGO_VERSION=1.10.4 HORDAK_INSTALL_ARGS=django-hordak
+- DJANGO_VERSION=1.9.12 HORDAK_INSTALL_ARGS=django-hordak
+- DJANGO_VERSION=1.8.17 HORDAK_INSTALL_ARGS=django-hordak
+- DJANGO_VERSION=1.10.4 HORDAK_INSTALL_ARGS=django-hordak
+- DJANGO_VERSION=1.10.4 HORDAK_INSTALL_ARGS=git+git://github.com/adamcharnock/django-hordak.git@master#egg=django-hordak
+install:
+- python setup.py develop
+- pip install .
+- pip uninstall -y django-hordak
+- pip install pytest coveralls $HORDAK_INSTALL_ARGS
+script:
+- env
+- env PYTHONPATH=`pwd` coverage run --source=battlecat ./manage.py test
+addons:
+  postgresql: "9.2"
+after_success: coveralls

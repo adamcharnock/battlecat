@@ -1,0 +1,16 @@
+{% extends "adminlte/login.html" %}
+{% load static bootstrap3 %}
+
+{% block form %}
+    <form action="{% url 'auth:login' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form_errors form %}
+        {% bootstrap_field form.username show_label=False placeholder="Username" addon_before='<i class="fa fa-user"></i>' %}
+        {% bootstrap_field form.password show_label=False placeholder="Password" addon_before='<i class="fa fa-lock"></i>' %}
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-8">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
