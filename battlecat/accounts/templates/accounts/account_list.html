@@ -1,0 +1,6 @@
+{% extends 'hordak/accounts/account_list.html' %}
+
+{% block content %}
+    {{ block.super }}
+    <a href="{% url 'accounts:create' %}" class="btn btn-lg btn-primary pull-right">Create account</a>
+{% endblock %}

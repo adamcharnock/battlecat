@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^core/', include('battlecat.core.urls', namespace='core')),
+    url(r'^transactions/', include('battlecat.transactions.urls', namespace='transactions')),
+    url(r'^accounts/', include('battlecat.accounts.urls', namespace='accounts')),
 ]
 
 if settings.ENABLE_DEBUG_TOOLBAR:

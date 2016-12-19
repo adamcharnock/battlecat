@@ -2,9 +2,9 @@
 {% load hordak %}
 
 {% block nav_links %}
-    {% comment %}
-    <li><a href="{% url 'dashboard:dashboard' %}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
+    <li><a href="{% url 'accounts:list' %}"><i class="fa fa-tachometer"></i> <span>Accounts</span></a></li>
+    {% comment %}
     <li>
         <a href="{% url 'transactions:reconcile' %}">
             <i class="fa fa-arrows-h"></i>
@@ -17,7 +17,7 @@
     </li>
     {% endcomment %}
 
-{#    <li><a href="{% url 'transactions:create' %}"><i class="fa fa-arrow-circle-right"></i> <span>Create Transaction</span></a></li>#}
+    <li><a href="{% url 'transactions:create' %}"><i class="fa fa-arrow-circle-right"></i> <span>Create Transaction</span></a></li>
 
     {% comment %}
     <li><a href="{% url 'costs:recurring' %}"><i class="fa fa-clock-o"></i> <span>Recurring Costs</span></a></li>
