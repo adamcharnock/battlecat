@@ -17,17 +17,21 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from hordak.views import accounts
-from hordak.views import transactions
+from hordak import views as hordak_views
 
 
 hordak_urls = [
-    url(r'^transactions/create/$', transactions.TransactionCreateView.as_view(), name='transactions_create'),
-    url(r'^transactions/reconcile/$', transactions.TransactionsReconcileView.as_view(), name='transactions_reconcile'),
-    url(r'^$', accounts.AccountListView.as_view(), name='accounts_list'),
-    url(r'^accounts/create/$', accounts.AccountCreateView.as_view(), name='accounts_create'),
-    url(r'^accounts/update/(?P<uuid>.+)/$', accounts.AccountUpdateView.as_view(), name='accounts_update'),
-    url(r'^accounts/(?P<uuid>.+)/$', accounts.AccountTransactionsView.as_view(), name='accounts_transactions'),
+    url(r'^transactions/create/$', hordak_views.TransactionCreateView.as_view(), name='transactions_create'),
+    url(r'^transactions/reconcile/$', hordak_views.TransactionsReconcileView.as_view(), name='transactions_reconcile'),
+    url(r'^$', hordak_views.AccountListView.as_view(), name='accounts_list'),
+    url(r'^accounts/create/$', hordak_views.AccountCreateView.as_view(), name='accounts_create'),
+    url(r'^accounts/update/(?P<uuid>.+)/$', hordak_views.AccountUpdateView.as_view(), name='accounts_update'),
+    url(r'^accounts/(?P<uuid>.+)/$', hordak_views.AccountTransactionsView.as_view(), name='accounts_transactions'),
+
+    url(r'^import/$', hordak_views.CreateImportView.as_view(), name='import_create'),
+    url(r'^import/(?P<uuid>.*)/setup/$', hordak_views.SetupImportView.as_view(), name='import_setup'),
+    url(r'^import/(?P<uuid>.*)/dry-run/$', hordak_views.DryRunImportView.as_view(), name='import_dry_run'),
+    url(r'^import/(?P<uuid>.*)/run/$', hordak_views.ExecuteImportView.as_view(), name='import_execute'),
 ]
 
 urlpatterns = [
