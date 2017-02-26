@@ -22,7 +22,7 @@ Battlecat is based on `Hordak`_ and is currently a work in progress.
 Requirements
 ------------
 
- * Django >= 1.8
+ * Django >= 1.9
  * Postgres >= 9.2
  * Python 2.7, 3.4, 3.5
  * Linux or macOS
