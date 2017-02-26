@@ -1,0 +1,9 @@
+form .money input {
+    width: 50%;
+    float: left;
+}
+form .money select {
+    width: 49%;
+    float: right;
+    margin-left: 1%;
+}

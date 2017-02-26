@@ -151,8 +151,8 @@ BROKER_URL = 'redis://localhost'
 
 # Django Bootstrap
 BOOTSTRAP3 = {
-    'horizontal_label_class': 'col-sm-3',
-    'horizontal_field_class': 'col-sm-9',
+    'horizontal_label_class': 'col-sm-3 col-lg-2',
+    'horizontal_field_class': 'col-sm-9 col-lg-10',
 }
 
 # Debug toolbar

@@ -7,7 +7,7 @@
     <table class="table table-striped">
         {% for form in leg_formset %}
             <tr>
-                <td>{% bootstrap_field form.amount show_label=False show_help=False %}</td>
+                <td>{% bootstrap_field form.amount show_label=False show_help=False form_group_class='form-group money' %}</td>
                 <td>{% bootstrap_field form.description show_label=False show_help=False %}</td>
                 <td>{% bootstrap_field form.account show_label=False show_help=False %}</td>
             </tr>

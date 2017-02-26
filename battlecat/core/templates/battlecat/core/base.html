@@ -1,1 +1,7 @@
 {% extends 'adminlte/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "core/css/common.css" %}">
+{% endblock %}

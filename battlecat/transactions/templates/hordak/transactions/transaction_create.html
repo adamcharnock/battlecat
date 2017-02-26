@@ -1,10 +1,14 @@
 {% extends 'hordak/transactions/transaction_create.html' %}
+{% load bootstrap3 %}
 
 {% block content %}
     <form action="{% url 'hordak:transactions_create' %}" method="post" class="form-horizontal">
         {% csrf_token %}
         {% block form_content %}
-            {% include 'hordak/partials/form.html' with form=form %}
+            {% bootstrap_field form.amount layout='horizontal' form_group_class='form-group money' %}
+            {% bootstrap_field form.from_account layout='horizontal' %}
+            {% bootstrap_field form.to_account layout='horizontal' %}
+            {% bootstrap_field form.description layout='horizontal' %}
             <p>
                 <input type="submit" value="Create Transaction" class="btn btn-primary btn-lg pull-right">
                 <a href="{% url 'hordak:accounts_list' %}" class="btn btn-lg pull-right">Cancel</a>

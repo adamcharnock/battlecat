@@ -5,7 +5,14 @@
 <form action="{% url 'hordak:currency_trade' %}" method="post" class="form-horizontal">
     {% csrf_token %}
     {% block form_content %}
-        {% bootstrap_form form layout='horizontal' %}
+
+        {% bootstrap_field form.source_account layout='horizontal' %}
+        {% bootstrap_field form.source_amount layout='horizontal' form_group_class='form-group money' %}
+        {% bootstrap_field form.trading_account layout='horizontal' %}
+        {% bootstrap_field form.destination_account layout='horizontal' %}
+        {% bootstrap_field form.destination_amount layout='horizontal' form_group_class='form-group money' %}
+        {% bootstrap_field form.description layout='horizontal' %}
+
         <p>
             <input type="submit" value="Create Trade" class="btn btn-primary btn-lg pull-right">
             <a href="{% url 'hordak:accounts_list' %}" class="btn btn-lg pull-right">Cancel</a>
