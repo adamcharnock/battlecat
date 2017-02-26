@@ -1,0 +1,18 @@
+{% extends 'hordak/transactions/reconcile.html' %}
+{% load bootstrap3 %}
+
+{% block reconcile_form_content %}
+    {% bootstrap_field transaction_form.description show_label=False %}
+    {{ leg_formset.management_form }}
+    <table class="table table-striped">
+        {% for form in leg_formset %}
+            <tr>
+                <td>{% bootstrap_field form.amount show_label=False show_help=False %}</td>
+                <td>{% bootstrap_field form.description show_label=False show_help=False %}</td>
+                <td>{% bootstrap_field form.account show_label=False show_help=False %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <input type="submit" value="Reconcile" class="btn btn-success pull-right">
+{% endblock reconcile_form_content %}

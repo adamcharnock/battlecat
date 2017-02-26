@@ -1,0 +1,19 @@
+{% extends 'hordak/statement_import/import_create.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <p>
+        Select a CSV file to import. You will then be able to review and reconcile each
+        entry, thereby entering it into your accounting system.
+    </p>
+
+    <form action="{% url 'hordak:import_create' %}" method="post" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+        {% block form_content %}
+            {% bootstrap_field form.bank_account layout='horizontal' %}
+            {% bootstrap_field form.file layout='horizontal' %}
+            {% bootstrap_field form.has_headings layout='horizontal' %}
+            <input type="submit" class="btn btn-primary btn-lg pull-right" value="Continue...">
+        {% endblock %}
+    </form>
+{% endblock %}
