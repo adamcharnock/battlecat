@@ -1,0 +1,15 @@
+{% extends 'hordak/transactions/currency_trade.html' %}
+{% load bootstrap3 %}
+
+{% block form %}
+<form action="{% url 'hordak:currency_trade' %}" method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% block form_content %}
+        {% bootstrap_form form layout='horizontal' %}
+        <p>
+            <input type="submit" value="Create Trade" class="btn btn-primary btn-lg pull-right">
+            <a href="{% url 'hordak:accounts_list' %}" class="btn btn-lg pull-right">Cancel</a>
+        </p>
+    {% endblock %}
+</form>
+{% endblock %}

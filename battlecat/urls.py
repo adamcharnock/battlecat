@@ -22,6 +22,7 @@ from hordak import views as hordak_views
 
 hordak_urls = [
     url(r'^transactions/create/$', hordak_views.TransactionCreateView.as_view(), name='transactions_create'),
+    url(r'^transactions/currency/$', hordak_views.CurrencyTradeView.as_view(), name='currency_trade'),
     url(r'^transactions/reconcile/$', hordak_views.TransactionsReconcileView.as_view(), name='transactions_reconcile'),
     url(r'^$', hordak_views.AccountListView.as_view(), name='accounts_list'),
     url(r'^accounts/create/$', hordak_views.AccountCreateView.as_view(), name='accounts_create'),
