@@ -49,7 +49,7 @@ Credits
 
   * Initial development by `Adam Charnock`_
 
-Battlecat is packeged using `Seed`_.
+Battlecat is packaged using `Seed`_.
 
 .. _Hordak: https://github.com/adamcharnock/django-hordak
 .. _Swiftwind: https://github.com/adamcharnock/swiftwind
