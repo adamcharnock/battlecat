@@ -10,6 +10,8 @@ env:
 - DJANGO_VERSION=1.8.17 HORDAK_INSTALL_ARGS=django-hordak
 - DJANGO_VERSION=1.10.4 HORDAK_INSTALL_ARGS=django-hordak
 - DJANGO_VERSION=1.10.4 HORDAK_INSTALL_ARGS=git+git://github.com/adamcharnock/django-hordak.git@master#egg=django-hordak
+before_install:
+- pip install -q $DJANGO_VERSION
 install:
 - python setup.py develop
 - pip install .
